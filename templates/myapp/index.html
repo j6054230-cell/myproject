@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Loyihasi</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .badge { background: #28a745; color: white; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Mening Django Loyiham</h1>
+    <p>CI/CD ishlayapti <span class="badge">✅</span></p>
+    
+    <hr>
+    <h3>Postlar ro'yxati:</h3>
+    <ul>
+    {% for post in posts %}
+        <li>{{ post.title }}</li>
+    {% empty %}
+        <li>Hozircha postlar yo'q.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
