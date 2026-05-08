@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy Python App
 
 on:
   push:
@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploying to VPS
+      - name: SSH orqali VPS-ga ulanish va yangilash
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -20,4 +20,6 @@ jobs:
             source venv/bin/activate
             pip install -r requirements.txt
             python manage.py collectstatic --noinput
-            sudo systemctl restart myproject
+            sudo systemctl restart myprojecto
+
+
